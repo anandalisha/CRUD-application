@@ -1,0 +1,64 @@
+<center>
+
+  <!-- Background image -->
+  <div class="p-5 bg-image" style="
+        background-image: url('https://mdbootstrap.com/img/new/textures/full/171.jpg');
+        height: 300px;
+        "></div>
+
+  <div class="card mx-4 mx-md-5 shadow-5-strong" style="
+        margin-top: -100px;
+        background: hsla(0, 0%, 100%, 0.8);
+        backdrop-filter: blur(30px);
+        ">
+<div class="container">
+    <h2> <%= link_to "Create new post", new_post_path %> </h2>
+    <br> <br>
+    <div class="row col-md-6 col-md-offset-2 custyle">
+    <table class="table table-striped custab">
+    <thead>
+    <h3 class="btn btn-primary btn-xs pull-right"> <%= link_to "Create new post", new_post_path %></h3>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th class="text-center">Action</th>
+        </tr>
+    </thead>
+            <% @posts.each do |post| %>
+            <tr>
+                <td> <%= link_to post.title, post_path(post) %> </td>
+
+                <td> <%= link_to post.description, post_path(post) %> </td>
+
+                <!-- <td> <%= button_to'Edit', edit_post_path(post), method: 'get'%></td> 
+
+                <td> <%= button_to  'Remove', post_path(post), method: 'delete', data: {confirm: 'Are you sure to delete?'}%> </td>
+                -->
+
+                <td class="text-center"><h4 class='btn btn-info btn-xs'> <%= button_to'Edit', edit_post_path(post), method: 'get'%> <span class="glyphicon glyphicon-edit"></span> </h4> 
+
+                <h4 class="btn btn-danger btn-xs"><%= button_to  'Remove', post_path(post), method: 'delete', data: {confirm: 'Are you sure to delete?'}%><span class="glyphicon glyphicon-remove"></span></h4>
+                </td>
+            </tr>
+           <% end %>
+    </table>
+    </div>
+</div>
+</div>
+
+</center>
+
+<!--
+<table border>
+    <% @posts.each do |post| %>
+    <tr>
+    <td> <%= link_to post.title, post_path(post) %> </td>
+    <td> <%= button_to'Edit', edit_post_path(post), method: 'get'%></td>
+    <td> <%= button_to  'Remove', post_path(post), method: 'delete', data: {confirm: 'Are you sure to delete?'}%> </td>
+    </tr>
+
+    <% end %>
+
+    <h3> <%= link_to "Create new post", new_post_path %> </h3>
+</table>
+-->

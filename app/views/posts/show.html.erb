@@ -1,0 +1,42 @@
+<!--
+<h1>Posts</h1>
+<h4><%= @post.title %></h4>
+<p><%= @post.description %></p>-->
+
+<section class="text-center">
+  <!-- Background image -->
+  <div class="p-5 bg-image" style="
+        background-image: url('https://mdbootstrap.com/img/new/textures/full/171.jpg');
+        height: 300px;
+        "></div>
+     <h2 class="fw-bold mb-5">Posts </h2>
+  <div class="card mx-4 mx-md-5 shadow-5-strong" style="
+        margin-top: -100px;
+        background: hsla(0, 0%, 100%, 0.8);
+        backdrop-filter: blur(30px);
+        ">
+    <div class="card-body py-5 px-md-5">
+
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-8">
+         
+            <div class="form-outline mb-4">
+              <h4> Title: <%= @post.title %></h4>
+            </div>
+        
+
+            <!-- Description input -->
+            <div class="form-outline mb-4">
+            <h5>Description</h5>
+              <p><%= @post.description %></p>
+
+            </div>
+
+            
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+

@@ -1,0 +1,46 @@
+<!-- Section: Design Block -->
+<section class="text-center">
+  <!-- Background image -->
+  <div class="p-5 bg-image" style="
+        background-image: url('https://mdbootstrap.com/img/new/textures/full/171.jpg');
+        height: 300px;
+        "></div>
+
+  <div class="card mx-4 mx-md-5 shadow-5-strong" style="
+        margin-top: -100px;
+        background: hsla(0, 0%, 100%, 0.8);
+        backdrop-filter: blur(30px);
+        ">
+    <div class="card-body py-5 px-md-5">
+
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-8">
+          <h2 class="fw-bold mb-5">Add a new Post </h2>
+          <%= form_with(model: @post) do |f| %>
+            <div class="form-outline mb-4">
+              <%= f.label :title, { class: "form-label"} %>
+              <%= f.text_field :title, { class: "form-control", placeholder: "Enter post title" } %>
+            </div>
+        
+
+            <!-- Description input -->
+            <div class="form-outline mb-4">
+              <%= f.label :description, { class: "form-label"} %>
+               <%= f.text_field :description, { class: "form-control", placeholder: "Enter description" } %>
+            </div>
+
+            
+
+
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary btn-block mb-4">
+              <%= f.submit "Submit", class: "btn btn-primary" %>
+            </button>
+
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
